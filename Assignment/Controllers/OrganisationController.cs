@@ -35,5 +35,57 @@ namespace Assignment.Controllers
             }
             return View();
         }
-    }
+
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var org = dbContext.organisations.FirstOrDefault(c => c.OrganisationId == id);
+            if (org == null)
+                return NotFound();
+            return View(org);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Organisation? org)
+        {
+            if (org.OrganisationId == null || org.OrganisationId == 0)
+            {
+                return View();
+            }
+            dbContext.organisations.Update(org);
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            Organisation org = dbContext.organisations.FirstOrDefault(x => x.OrganisationId == id);
+            if (org == null)
+                return NotFound();
+            return View(org);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Organisation org)
+        {
+            if (org == null)
+            {
+                return View("Index");
+            }
+            dbContext.organisations.Remove(org);
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        }
 }
