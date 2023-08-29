@@ -30,7 +30,8 @@ namespace Assignment.Data
                     FirstName = $"First{index}",
                     LastName = $"Last{index}",
                      Email= $"Email{index}@abc.com",
-                     Phone = $"Phone{index}"
+                     Phone = $"Phone{index}",
+                     DeptName = $"Org{index}"
                 })
                 .ToList();
         }

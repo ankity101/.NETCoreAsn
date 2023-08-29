@@ -26,6 +26,10 @@ namespace Assignment.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
+                    b.Property<string>("DeptName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -50,6 +54,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 1,
+                            DeptName = "Org1",
                             Email = "Email1@abc.com",
                             FirstName = "First1",
                             LastName = "Last1",
@@ -58,6 +63,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 2,
+                            DeptName = "Org2",
                             Email = "Email2@abc.com",
                             FirstName = "First2",
                             LastName = "Last2",
@@ -66,6 +72,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 3,
+                            DeptName = "Org3",
                             Email = "Email3@abc.com",
                             FirstName = "First3",
                             LastName = "Last3",
@@ -74,6 +81,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 4,
+                            DeptName = "Org4",
                             Email = "Email4@abc.com",
                             FirstName = "First4",
                             LastName = "Last4",
@@ -82,6 +90,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 5,
+                            DeptName = "Org5",
                             Email = "Email5@abc.com",
                             FirstName = "First5",
                             LastName = "Last5",
@@ -90,6 +99,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 6,
+                            DeptName = "Org6",
                             Email = "Email6@abc.com",
                             FirstName = "First6",
                             LastName = "Last6",
@@ -98,6 +108,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 7,
+                            DeptName = "Org7",
                             Email = "Email7@abc.com",
                             FirstName = "First7",
                             LastName = "Last7",
@@ -106,6 +117,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 8,
+                            DeptName = "Org8",
                             Email = "Email8@abc.com",
                             FirstName = "First8",
                             LastName = "Last8",
@@ -114,6 +126,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 9,
+                            DeptName = "Org9",
                             Email = "Email9@abc.com",
                             FirstName = "First9",
                             LastName = "Last9",
@@ -122,6 +135,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 10,
+                            DeptName = "Org10",
                             Email = "Email10@abc.com",
                             FirstName = "First10",
                             LastName = "Last10",
@@ -130,6 +144,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 11,
+                            DeptName = "Org11",
                             Email = "Email11@abc.com",
                             FirstName = "First11",
                             LastName = "Last11",
@@ -138,6 +153,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 12,
+                            DeptName = "Org12",
                             Email = "Email12@abc.com",
                             FirstName = "First12",
                             LastName = "Last12",
@@ -146,6 +162,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 13,
+                            DeptName = "Org13",
                             Email = "Email13@abc.com",
                             FirstName = "First13",
                             LastName = "Last13",
@@ -154,6 +171,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 14,
+                            DeptName = "Org14",
                             Email = "Email14@abc.com",
                             FirstName = "First14",
                             LastName = "Last14",
@@ -162,6 +180,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 15,
+                            DeptName = "Org15",
                             Email = "Email15@abc.com",
                             FirstName = "First15",
                             LastName = "Last15",
@@ -170,6 +189,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 16,
+                            DeptName = "Org16",
                             Email = "Email16@abc.com",
                             FirstName = "First16",
                             LastName = "Last16",
@@ -178,6 +198,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 17,
+                            DeptName = "Org17",
                             Email = "Email17@abc.com",
                             FirstName = "First17",
                             LastName = "Last17",
@@ -186,6 +207,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 18,
+                            DeptName = "Org18",
                             Email = "Email18@abc.com",
                             FirstName = "First18",
                             LastName = "Last18",
@@ -194,6 +216,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 19,
+                            DeptName = "Org19",
                             Email = "Email19@abc.com",
                             FirstName = "First19",
                             LastName = "Last19",
@@ -202,6 +225,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 20,
+                            DeptName = "Org20",
                             Email = "Email20@abc.com",
                             FirstName = "First20",
                             LastName = "Last20",

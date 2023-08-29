@@ -19,6 +19,13 @@ namespace Assignment.Controllers
         }
 
         public IActionResult Create() {
+            List<Organisation> dept =dbContext.organisations.ToList();
+            List<string> Departments = new List<string>();
+            foreach(var x in dept)
+            {
+                Departments.Add(x.OrganisationName);
+            }
+            ViewBag.org = Departments;
             return View();
         }
 
@@ -32,7 +39,7 @@ namespace Assignment.Controllers
             if(id==null)
                 return RedirectToAction("Index");
            Employee? empExisting =  dbContext.employees.Find(id);
-            if(empExisting==null)
+             if(empExisting==null)
             {
                 dbContext.employees.Add(employee);
                 dbContext.SaveChanges();
@@ -43,6 +50,14 @@ namespace Assignment.Controllers
 
         public IActionResult Edit(int? id)
         {
+            List<Organisation> dept = dbContext.organisations.ToList();
+            List<string> Departments = new List<string>();
+            foreach (var x in dept)
+            {
+                Departments.Add(x.OrganisationName);
+            }
+            ViewBag.org = Departments;
+
             Employee employee = dbContext.employees.Find(id);
             if(employee == null)
                RedirectToAction("Index");
@@ -66,6 +81,15 @@ namespace Assignment.Controllers
             Employee? employee = dbContext.employees.Find(id);
             if (employee == null)
                 return RedirectToAction("Index");
+
+            List<Organisation> dept = dbContext.organisations.ToList();
+            List<string> Departments = new List<string>();
+            foreach (var x in dept)
+            {
+                Departments.Add(x.OrganisationName);
+            }
+            ViewBag.org = Departments;
+
             return View(employee);
 
         }

@@ -27,6 +27,12 @@
             <label asp-for="Email"></label>
             <input asp-for="Email" class="form-control" />
         </div>
+
+        <div class="mb-3 row">
+            <label asp-for="DeptName"></label>
+            @Html.DropDownListFor(model => model.DeptName, new SelectList(ViewBag.org),"Select Dept" )
+        </div>
+
         <div class="mb-3 row">
             <label asp-for="Phone"></label>
             <input asp-for="Phone" class="form-control" />
