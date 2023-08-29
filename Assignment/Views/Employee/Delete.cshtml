@@ -31,6 +31,12 @@
             <input asp-for="Email" class="form-control disabled" />
         </div>
 
+        @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", @id = "dob" } })
+            @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+        </div>
+
         <div class="mb-3 row">
             <label asp-for="DeptName"></label>
             @Html.DropDownListFor(model => model.DeptName, new SelectList(ViewBag.org),"Select Dept" )

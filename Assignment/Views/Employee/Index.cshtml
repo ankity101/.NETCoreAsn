@@ -31,6 +31,9 @@
                     Last Name
                 </th>
                 <th>
+                    Date Of Birth
+                </th>
+                <th>
                     Email
                 </th>
                 <th>
@@ -58,9 +61,12 @@
                     </td>
                     <td>
                         @category.FirstName
-                    </td>
+                    </td>   
                     <td>
                         @category.LastName
+                    </td>
+                    <td>
+                        @category.DateOfBirth.ToString("yyyy-MM-dd")
                     </td>
                     <td>
                         @category.Email
