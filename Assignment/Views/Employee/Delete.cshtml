@@ -4,6 +4,7 @@
 
 <form method="post">
 
+     
     <div class="border p-3 mt-4 ">
         <div class="text-primary">
             Delete Category
@@ -26,10 +27,10 @@
             <input asp-for="LastName" class="form-control disabled" />
         </div>
 
-        <div class="mb-3 row">
+      @*   <div class="mb-3 row">
             <label asp-for="Email"></label>
             <input asp-for="Email" class="form-control disabled" />
-        </div>
+        </div> *@
 
         @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-12">

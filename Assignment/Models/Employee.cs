@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Models
@@ -12,7 +13,8 @@ namespace Assignment.Models
         public string FirstName { get; set; }
       
         public string LastName { get; set; }
-        
+
+        [Remote(action: "IsEmailInUse",controller:"Employee")]
         public string Email { get; set; }
       
         public string Phone { get; set; }

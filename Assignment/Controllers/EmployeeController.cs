@@ -1,5 +1,6 @@
 ﻿using Assignment.Data;
 using Assignment.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Controllers
@@ -11,6 +12,17 @@ namespace Assignment.Controllers
         public EmployeeController(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        [HttpGet]
+        [HttpPost]
+        public IActionResult IsEmailInUse(string email)
+        {
+            var user = dbContext.employees.FirstOrDefault(u => u.Email == email);
+
+            if (user == null)
+                return Json(true);
+            return Json($"Email {email} is already in use");
         }
         public IActionResult Index()
         {
@@ -28,9 +40,7 @@ namespace Assignment.Controllers
             ViewBag.org = Departments;
             return View();
         }
-
         [HttpPost]
-
         public IActionResult Create(Employee employee) 
         { 
             if(employee == null)
@@ -74,6 +84,7 @@ namespace Assignment.Controllers
             return RedirectToAction("Index");
         }
 
+
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -97,7 +108,9 @@ namespace Assignment.Controllers
         [HttpPost]
         public IActionResult Delete(Employee? employee)
         {
-            if(employee == null)
+            ModelState.Remove("Email");
+
+            if (employee == null)
                 return RedirectToAction("Index");
             dbContext.employees.Remove(employee);
             dbContext.SaveChanges();
