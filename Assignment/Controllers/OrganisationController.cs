@@ -2,6 +2,7 @@
 using Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace Assignment.Controllers
 {
     public class OrganisationController : Controller
@@ -86,8 +87,7 @@ namespace Assignment.Controllers
             return RedirectToAction("Index");
         }
 
- 
-
-
         }
 }
+
+
