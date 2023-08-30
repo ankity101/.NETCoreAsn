@@ -14,17 +14,17 @@
         <hr />
         <div class="mb-3 row">
             <label asp-for="EmployeeId"></label>
-            <input asp-for="EmployeeId" class="form-control disabled" />
+            <input asp-for="EmployeeId" class="form-control disabled" readonly />
         </div>
 
         <div class="mb-3 row">
             <label asp-for="FirstName"></label>
-            <input asp-for="FirstName" class="form-control disabled" />
+            <input asp-for="FirstName" class="form-control disabled" readonly />
         </div>
 
         <div class="mb-3 row">
             <label asp-for="LastName"></label>
-            <input asp-for="LastName" class="form-control disabled" />
+            <input asp-for="LastName" class="form-control disabled" readonly />
         </div>
 
       @*   <div class="mb-3 row">
@@ -32,20 +32,19 @@
             <input asp-for="Email" class="form-control disabled" />
         </div> *@
 
-        @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.DateOfBirth )
         <div class="col-md-12">
-            @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", @id = "dob" } })
-            @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
-        </div>
+            @Html.EditorFor(model => model.DateOfBirth ,  new { htmlAttributes = new { @disabled = "disabled" } } )
+         </div>
 
         <div class="mb-3 row">
             <label asp-for="DeptName"></label>
-            @Html.DropDownListFor(model => model.DeptName, new SelectList(ViewBag.org),"Select Dept" )
+            @Html.DropDownListFor(model => model.DeptName, new SelectList(ViewBag.org),"Select Dept" , new { @disabled = "disabled" } )
         </div>
 
         <div class="mb-3 row">
             <label asp-for="Phone"></label>
-            <input asp-for="Phone" class="form-control disabled" />
+            <input asp-for="Phone" class="form-control disabled" readonly />
         </div>
 
         <div class="row">

@@ -3,6 +3,8 @@ using Assignment.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+
+
 namespace Assignment.Controllers
 {
     public class EmployeeController : Controller
@@ -19,7 +21,6 @@ namespace Assignment.Controllers
         public IActionResult IsEmailInUse(string email)
         {
             var user = dbContext.employees.FirstOrDefault(u => u.Email == email);
-
             if (user == null)
                 return Json(true);
             return Json($"Email {email} is already in use");
@@ -42,20 +43,30 @@ namespace Assignment.Controllers
         }
         [HttpPost]
         public IActionResult Create(Employee employee) 
-        { 
-            if(employee == null)
-                return RedirectToAction("Index");
-            int? id = employee.EmployeeId;
-            if(id==null)
-                return RedirectToAction("Index");
-           Employee? empExisting =  dbContext.employees.Find(id);
-             if(empExisting==null)
+        {
+            if (ModelState.IsValid)
             {
-                dbContext.employees.Add(employee);
-                dbContext.SaveChanges();
-                return RedirectToAction("Index");
+                if (employee == null)
+                    return RedirectToAction("Index");
+                int? id = employee.EmployeeId;
+                if (id == null)
+                    return RedirectToAction("Index");
+                Employee? empExisting = dbContext.employees.Find(id);
+                if (empExisting == null)
+                {
+                    dbContext.employees.Add(employee);
+                    dbContext.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Error = "Employee Id can not be duplicate";
+                    return View("ErrorDuplicate");
+                }
+                 
             }
-            throw  new Exception("Employee Id can not be duplicate");
+            else
+                return View("Error");
         }
 
         public IActionResult Edit(int? id)
@@ -77,14 +88,29 @@ namespace Assignment.Controllers
         [HttpPost]
         public IActionResult Edit(Employee employee)
         {
-            if(employee == null)
-                return RedirectToAction("Index");
-            dbContext.employees.Update(employee);
-            dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (employee == null)
+                        return RedirectToAction("Index");
+                    dbContext.employees.Update(employee);
+                    dbContext.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+
+                    return View("Error");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View("ErrorDuplicate");
+            }
+            
         }
-
-
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,8 +134,7 @@ namespace Assignment.Controllers
         [HttpPost]
         public IActionResult Delete(Employee? employee)
         {
-            ModelState.Remove("Email");
-
+            
             if (employee == null)
                 return RedirectToAction("Index");
             dbContext.employees.Remove(employee);

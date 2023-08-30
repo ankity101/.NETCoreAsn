@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230829160504_AddingOrgAndEmpTableAndSeedingData")]
-    partial class AddingOrgAndEmpTableAndSeedingData
+    [Migration("20230830044127_UpdatedMigration")]
+    partial class UpdatedMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,7 +61,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 1,
-                            DateOfBirth = new DateTime(1995, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2001, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org1",
                             Email = "Email1@abc.com",
                             FirstName = "First1",
@@ -71,7 +71,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 2,
-                            DateOfBirth = new DateTime(2001, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2000, 11, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org2",
                             Email = "Email2@abc.com",
                             FirstName = "First2",
@@ -81,7 +81,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 3,
-                            DateOfBirth = new DateTime(1998, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2000, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org3",
                             Email = "Email3@abc.com",
                             FirstName = "First3",
@@ -91,7 +91,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 4,
-                            DateOfBirth = new DateTime(1997, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1995, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org4",
                             Email = "Email4@abc.com",
                             FirstName = "First4",
@@ -101,7 +101,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 5,
-                            DateOfBirth = new DateTime(1999, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1995, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org5",
                             Email = "Email5@abc.com",
                             FirstName = "First5",
@@ -111,7 +111,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 6,
-                            DateOfBirth = new DateTime(1997, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2000, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org6",
                             Email = "Email6@abc.com",
                             FirstName = "First6",
@@ -121,7 +121,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 7,
-                            DateOfBirth = new DateTime(1995, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1996, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org7",
                             Email = "Email7@abc.com",
                             FirstName = "First7",
@@ -131,7 +131,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 8,
-                            DateOfBirth = new DateTime(1996, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1996, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org8",
                             Email = "Email8@abc.com",
                             FirstName = "First8",
@@ -141,7 +141,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 9,
-                            DateOfBirth = new DateTime(2001, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1996, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org9",
                             Email = "Email9@abc.com",
                             FirstName = "First9",
@@ -151,7 +151,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 10,
-                            DateOfBirth = new DateTime(1996, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1997, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org10",
                             Email = "Email10@abc.com",
                             FirstName = "First10",
@@ -161,7 +161,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 11,
-                            DateOfBirth = new DateTime(1995, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1999, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org11",
                             Email = "Email11@abc.com",
                             FirstName = "First11",
@@ -171,7 +171,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 12,
-                            DateOfBirth = new DateTime(1998, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1998, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org12",
                             Email = "Email12@abc.com",
                             FirstName = "First12",
@@ -181,7 +181,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 13,
-                            DateOfBirth = new DateTime(1995, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1998, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org13",
                             Email = "Email13@abc.com",
                             FirstName = "First13",
@@ -191,7 +191,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 14,
-                            DateOfBirth = new DateTime(1995, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1999, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org14",
                             Email = "Email14@abc.com",
                             FirstName = "First14",
@@ -201,7 +201,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 15,
-                            DateOfBirth = new DateTime(2001, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1995, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org15",
                             Email = "Email15@abc.com",
                             FirstName = "First15",
@@ -211,7 +211,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 16,
-                            DateOfBirth = new DateTime(2001, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(2000, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org16",
                             Email = "Email16@abc.com",
                             FirstName = "First16",
@@ -221,7 +221,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 17,
-                            DateOfBirth = new DateTime(2001, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1996, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org17",
                             Email = "Email17@abc.com",
                             FirstName = "First17",
@@ -231,7 +231,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 18,
-                            DateOfBirth = new DateTime(1999, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1996, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org18",
                             Email = "Email18@abc.com",
                             FirstName = "First18",
@@ -241,7 +241,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 19,
-                            DateOfBirth = new DateTime(1996, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1998, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org19",
                             Email = "Email19@abc.com",
                             FirstName = "First19",
@@ -251,7 +251,7 @@ namespace Assignment.Migrations
                         new
                         {
                             EmployeeId = 20,
-                            DateOfBirth = new DateTime(1995, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1995, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeptName = "Org20",
                             Email = "Email20@abc.com",
                             FirstName = "First20",
